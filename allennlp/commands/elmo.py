@@ -217,6 +217,7 @@ class ElmoEmbedder:
         the second a mask (batch_size, num_timesteps).
         """
         character_ids = batch_to_ids(batch)
+        self.cuda_device = -1
         if self.cuda_device >= 0:
             character_ids = character_ids.cuda(device=self.cuda_device)
 
